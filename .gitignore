@@ -1,7 +1,9 @@
+*~
+deploy
+
 *.py[cod]
 
 # C extensions
-*.so
 
 # Packages
 *.egg
