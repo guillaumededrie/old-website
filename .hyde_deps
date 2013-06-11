@@ -1,3 +1,4 @@
+!!python/unicode 'fr/index.html': [base.j2]
 !!python/unicode 'index.html': [base.j2]
 !!python/unicode 'media/css/bootstrap-responsive.css': []
 !!python/unicode 'media/css/bootstrap-responsive.min.css': []

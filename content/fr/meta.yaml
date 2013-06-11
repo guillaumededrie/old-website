@@ -1,0 +1,13 @@
+language: fr
+menu:
+  -
+     name: "Accueil"
+     page: "index.html"
+  -
+     name: "Blog"
+     page: "blog/"
+  -
+     name: "Projets"
+     page: "projets.html"
+l10n:
+  search: "Rechercher"

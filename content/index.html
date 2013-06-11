@@ -1,6 +1,14 @@
 ---
 extends: base.j2
 default_block: main
-title: BASIC - A hyde website
-description: Home page for the BASIC hyde template
+title: Index
+description: test
 ---
+
+You can see the website in 
+
+<ul>
+{% for code, lang in languages %}
+  <li><a href="{{ content_url(code) }}">{{lang}}</a></li>
+{% endfor %}
+</ul>
