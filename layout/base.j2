@@ -6,18 +6,53 @@
     <head>
         <meta charset="{{ resource.meta.charset }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{% block title %}{{ resource.meta.title }}{% endblock %}</title>
+        <title>{% block title %}{{ resource.meta.title|e }} | {{ resource.meta.author|e }} {% endblock %}</title>
         <meta name="description" content="{{ resource.meta.description }}">
         <meta name="viewport" content="width=device-width">
 
 	{% block css %}
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap.min.css') }}">
         <style>
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
+	  html, body {
+	     height: 100%;
+	  }
+
+          body {
+	  background: url('{{ media_url('img/diagonal-noise.png') }}');
+          }
+
+	  #page-wrapper {
+          min-height: 100%;
+          height: auto !important;
+          height: 100%;
+          /* Negative indent footer by it's height */
+          margin: 0 auto -60px;
+	  }
+
+	  /* Set the fixed height of the footer here */
+	  #push,
+	  #footer {
+          height: 60px;
+	  }
+
+	  #footer {
+          background-color: black;
+	  }
+
+	  /* Wrapper for page content to push down footer */
+	  #page-wrapper .container {
+	  background: white;
+	  border: 5px solid white;
+	  
+	  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+	  -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+	  box-shadow: 0 0 10px rgba(0,0,0,.3);
+
+	  padding: 7px;
+	  }
+
         </style>
+
         <link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.min.css') }}">
         <link rel="stylesheet" href="{{ media_url('css/main.css') }}">
 	{% endblock css %}
@@ -30,35 +65,41 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container">
 
-	  <div class="">
-	    <div class="pull-right">
-	      <i class="icon-envelope"></i>
+	<div id="page-wrapper">
+	  <div class="container">
+	    <header>
+	      <div class="pull-right">
+		<i class="icon-envelope"></i>
+	      </div>
+	      <h1>Guillaume Dedrie</h1>
+	    </header>
+            <hr>
+	    <div>
+	      <ul class="nav nav-pills">
+		{# Menu generation #}
+		{% for menu in resource.meta.menu %}
+		<li{% if content_url(resource.url).startswith(content_url(resource.meta.language + '/' + menu['page'])) %} class="active"{% endif %}><a href="{{ content_url(resource.meta.language + '/' + menu['page']) }}">{{ menu['name']|e }}</a>
+		</li>
+		{% endfor %}
+		<li class="pull-right">Rechercher</li>
+	      </ul>
 	    </div>
-	    <h1>Guillaume Dedrie</h1>
+
+	    {% block main %}{% endblock main %}
+	  
 	  </div>
-
-          <hr>
-
-	  <div class="">
-	       <ul class="nav nav-pills">
-		 {# Menu generation #}
-		 {% for menu in resource.meta.menu %}
-		 <li{% if content_url(resource.url).startswith(content_url(resource.meta.language + '/' + menu['page'])) %} class="active"{% endif %}><a href="{{ content_url(resource.meta.language + '/' + menu['page']) }}">{{ menu['name']|e }}</a>
-		 </li>
-		 {% endfor %}
-	       </ul>
+	  <div id="push"></div>
+	</div>
+	
+        <footer id="footer">
+	  <div class="container">
+            <p>Footer</p>
 	  </div>
+        </footer>
 
 
-	  {% block main %}
 
-	  {% endblock main %}
-          <footer>
-            <p>&copy; Company 2012</p>
-          </footer>
-        </div> <!-- /container -->
 
 	{% block bottomjs %}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
