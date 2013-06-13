@@ -18,43 +18,15 @@
 	  }
 
           body {
+	  padding-top: 60px;
 	  background: url('{{ media_url('img/diagonal-noise.png') }}');
           }
-
-	  #page-wrapper {
-          min-height: 100%;
-          height: auto !important;
-          height: 100%;
-          /* Negative indent footer by it's height */
-          margin: 0 auto -60px;
-	  }
-
-	  /* Set the fixed height of the footer here */
-	  #push,
-	  #footer {
-          height: 60px;
-	  }
-
-	  #footer {
-          background-color: black;
-	  }
-
-	  /* Wrapper for page content to push down footer */
-	  #page-wrapper .container {
-	  background: white;
-	  border: 5px solid white;
-	  
-	  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-	  -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-	  box-shadow: 0 0 10px rgba(0,0,0,.3);
-
-	  padding: 7px;
-	  }
 
         </style>
 
         <link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.min.css') }}">
         <link rel="stylesheet" href="{{ media_url('css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags16.css" />
 	{% endblock css %}
 
 	{% block topjs %}
@@ -64,9 +36,33 @@
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+            <![endif]-->
 
-	<div id="page-wrapper">
+	<div id="top" class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	      </a>
+	      
+	      <div class="nav-collapse collapse pull-right">
+		<ul class="nav">
+		  <li class="dropdown f16">
+		    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Français <span class="flag fr"></span> <b class="caret"></b></a>
+		    <ul class="dropdown-menu">
+		      <li><a href="#">English <span class="flag us"></span></a></li>
+		    </ul>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="wrapper">
 	  <div class="container">
 	    <header>
 	      <div class="pull-right">
