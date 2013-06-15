@@ -17,11 +17,33 @@
 	     height: 100%;
 	  }
 
-          body {
-	  padding-top: 60px;
-	  background: url('{{ media_url('img/diagonal-noise.png') }}');
-          }
+      /* Wrapper for page content to push down footer */
+      #page-wrapper {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
 
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
         </style>
 
         <link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.min.css') }}">
@@ -38,63 +60,44 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
             <![endif]-->
 
-	<div id="top" class="navbar navbar-fixed-top">
-	  <div class="navbar-inner">
-	    <div class="container">
-
-
-	      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	      </a>
-	      
-	      <div class="nav-collapse collapse">
-		<form class="navbar-search pull-left">
-		  <input type="text" class="search-query" placeholder="Search">
-		</form>
-
-		<ul class="nav pull-right">
-		  <li class="dropdown f16">
-		    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Français <span class="flag fr"></span> <b class="caret"></b></a>
-		    <ul class="dropdown-menu">
-		      <li><a href="#">English <span class="flag us"></span></a></li>
-		    </ul>
-		  </li>
-		</ul>
-
-	      </div>
-	    </div>
-	  </div>
-	</div>
-
-	<div id="wrapper">
-	  <div class="container">
-	    <header>
-	      <div class="pull-right">
-		<i class="icon-envelope"></i>
-	      </div>
-	      <h1>Guillaume Dedrie</h1>
-	    </header>
-            <hr>
-	    <div>
-	      <ul class="nav nav-pills">
-		{# Menu generation #}
-		{% for menu in resource.meta.menu %}
-		<li{% if content_url(resource.url).startswith(content_url(resource.meta.language + '/' + menu['page'])) %} class="active"{% endif %}><a href="{{ content_url(resource.meta.language + '/' + menu['page']) }}">{{ menu['name']|e }}</a>
+	<div id="page-wrapper">
+	  <div class="navbar">
+	    <div class="navbar-inner">
+	      <ul class="nav pull-right">
+		<li class="dropdown f16">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Français <span class="flag fr"></span> <b class="caret"></b></a>
+		  <ul class="dropdown-menu">
+		    <li><a href="#">English <span class="flag us"></span></a></li>
+		  </ul>
 		</li>
-		{% endfor %}
-		<li class="pull-right">Rechercher</li>
 	      </ul>
 	    </div>
+	  </div>
+
+	  <div id="main-wrapper">
+	    <div class="container">
+	      <header>
+		<ul class="nav nav-pills pull-right">
+		  {# Menu generation #}
+		  {% for menu in resource.meta.menu %}
+		  <li{% if content_url(resource.url).startswith(content_url(resource.meta.language + '/' + menu['page'])) %} class="active"{% endif %}><a href="{{ content_url(resource.meta.language + '/' + menu['page']) }}">{{ menu['name']|e }}</a>
+		  </li>
+		  {% endfor %}
+		</ul>
+		<h1>Guillaume Dedrie</h1>
+	      </header>
+	      <hr />
+	      <ul class="breadcrumb">
+		<li class="active"><a href="#">Home</a> <span class="divider">/</span></li>
+	      </ul>
 
 	    {% block main %}{% endblock main %}
-	  
+
+	    </div>
+	    <div id="push"></div>
 	  </div>
-	  <div id="push"></div>
 	</div>
-	
+
         <footer id="footer">
 	  <div class="container">
             <p>Footer</p>
