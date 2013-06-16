@@ -86,13 +86,33 @@
 		</ul>
 		<h1>Guillaume Dedrie</h1>
 	      </header>
+
 	      <hr />
+
 	      <ul class="breadcrumb">
-		<li class="active"><a href="#">Home</a> <span class="divider">/</span></li>
-	      </ul>
+	      </ul> 
 
-	    {% block main %}{% endblock main %}
+	      <div id="sidebar" class="row">
+		<div class="span9">
+		  {% block main %}{% endblock main %}
+		</div><!-- end span9 -->
 
+
+		<div class="span3">
+
+		  <div id="search">
+		    <p>Rechercher sur ce site</p>
+		    <form class="form-search">
+		      <div class="input-append">
+			<input type="text" class="span2 search-query">
+			<button type="submit" class="btn">Search</button>
+		      </div>
+		    </form>
+		  </div>
+		  <hr />
+
+		</div><!-- end span3 -->
+	      </div><!-- end sidebar -->
 	    </div>
 	    <div id="push"></div>
 	  </div>
