@@ -35,6 +35,15 @@
         background-color: #f5f5f5;
       }
 
+	  #sidebar .span9 {
+	  padding: 0px 7px;
+	  border-right: 1px solid #f5f5f5;
+	  }
+
+	  #main-wrapper {
+	  margin-bottom: 20px;
+}
+
       /* Lastly, apply responsive CSS fixes as necessary */
       @media (max-width: 767px) {
         #footer {
@@ -72,7 +81,7 @@
 		</li>
 	      </ul>
 	    </div>
-	  </div>
+	  </div><!-- end navbar -->
 
 	  <div id="main-wrapper">
 	    <div class="container">
@@ -89,43 +98,36 @@
 
 	      <hr />
 
-	      <ul class="breadcrumb">
-	      </ul> 
-
-	      <div id="sidebar" class="row">
+	      <div id="sidebar" class="row-fluid">
 		<div class="span9">
 		  {% block main %}{% endblock main %}
 		</div><!-- end span9 -->
 
 
 		<div class="span3">
-
 		  <div id="search">
 		    <p>Rechercher sur ce site</p>
 		    <form class="form-search">
 		      <div class="input-append">
-			<input type="text" class="span2 search-query">
+			<input type="text" class="span8 search-query">
 			<button type="submit" class="btn">Search</button>
 		      </div>
 		    </form>
-		  </div>
+		  </div><!-- end search -->
 		  <hr />
 
 		</div><!-- end span3 -->
 	      </div><!-- end sidebar -->
-	    </div>
+	    </div><!-- end container -->
 	    <div id="push"></div>
-	  </div>
-	</div>
+	  </div><!-- end main-wrapper -->
+	</div><!-- end page-wrapper -->
 
         <footer id="footer">
 	  <div class="container">
             <p>Footer</p>
 	  </div>
         </footer>
-
-
-
 
 	{% block bottomjs %}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
