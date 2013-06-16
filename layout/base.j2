@@ -23,26 +23,27 @@
         height: auto !important;
         height: 100%;
         /* Negative indent footer by it's height */
-        margin: 0 auto -60px;
+        margin: 0 auto -140px;
       }
 
-      /* Set the fixed height of the footer here */
-      #push,
-      #footer {
-        height: 60px;
-      }
-      #footer {
-        background-color: #f5f5f5;
-      }
+	  /* Set the fixed height of the footer here */
+	  #push,
+	  #footer {
+          height: 140px;
+	  }
 
-	  #sidebar .span9 {
+	  #footer {
+          background-color: #f5f5f5;
+	  }
+
+	  #main-content {
 	  padding: 0px 7px;
 	  border-right: 1px solid #f5f5f5;
 	  }
 
 	  #main-wrapper {
 	  margin-bottom: 20px;
-}
+	  }
 
       /* Lastly, apply responsive CSS fixes as necessary */
       @media (max-width: 767px) {
@@ -70,9 +71,12 @@
             <![endif]-->
 
 	<div id="page-wrapper">
+
 	  <div class="navbar">
 	    <div class="navbar-inner">
 	      <ul class="nav pull-right">
+
+		<li class="divider-vertical"></li>
 		<li class="dropdown f16">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Français <span class="flag fr"></span> <b class="caret"></b></a>
 		  <ul class="dropdown-menu">
@@ -98,22 +102,22 @@
 
 	      <hr />
 
-	      <div id="sidebar" class="row-fluid">
-		<div class="span9">
+	      <div class="row-fluid">
+		<div id="main-content" class="span9">
 		  {% block main %}{% endblock main %}
 		</div><!-- end span9 -->
 
 
-		<div class="span3">
+		<div id="sidebar" class="span3">
 		  <div id="search">
-		    <p>Rechercher sur ce site</p>
+		    <h4>Rechercher sur ce site</h4>
 		    <form class="form-search">
 		      <div class="input-append">
 			<input type="text" class="span8 search-query">
-			<button type="submit" class="btn">Search</button>
+			<button type="submit" class="btn">{{ resource.meta.l10n.search|e }}</button>
 		      </div>
 		    </form>
-		  </div><!-- end search -->
+		  </div><!-- end #search -->
 		  <hr />
 
 		</div><!-- end span3 -->
@@ -124,9 +128,26 @@
 	</div><!-- end page-wrapper -->
 
         <footer id="footer">
-	  <div class="container">
-            <p>Footer</p>
-	  </div>
+	  <div class="container text-center">
+	    <div class="row-fluid">
+	      <div class="span8">
+		<h4>{{ resource.meta.l10n.about_this_site|e }}</h4>
+		<div class="row-fluid">
+		  <div id="licence" class="span6">
+		    {{ resource.meta.l10n.licence }}
+		  </div><!-- end #licence -->
+
+		  <div class="span6">
+		    <p>{{ resource.meta.l10n.powered_using|e }} <a href="http://ringce.com/hyde">Hyde</a>, <a href="http://www.initializr.com/"> Initializr</a> (<a href="http://twitter.github.io/bootstrap/">Bootstrap</a>, <a href="http://modernizr.com/">Modernizr</a>, <a href="http://jquery.com/">jQuery</a>, ...).</p>
+		    <p>{{ resource.meta.l10n.source_available|e }} <a href="https://github.com/">GitHub</a> : <a href="https://github.com/guillaumededrie/guillaume.dedrie.fr">site</a> / <a href="https://github.com/guillaumededrie/guillaume.dedrie.fr/tree/master/content{{ content_url(resource.url) }}">page</a>.</p>
+		  </div>
+		</div>
+	      </div><!-- end .span4 -->
+	      <div class="span4">
+		<h4>{{ resource.meta.l10n.follow_me|e }}</h4>
+	      </div><!-- end .span8 -->
+	    </div><!-- end .row-fluid -->
+	  </div><!-- end .container -->
         </footer>
 
 	{% block bottomjs %}
