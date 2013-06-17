@@ -77,12 +77,16 @@
 	      <ul class="nav pull-right">
 
 		<li class="divider-vertical"></li>
+		{# Translation module #}
 		<li class="dropdown f16">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Français <span class="flag fr"></span> <b class="caret"></b></a>
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ languages[resource.meta.language] }} <span class="flag {{ resource.meta.language }}"></span> <b class="caret"></b></a>
 		  <ul class="dropdown-menu">
-		    <li><a href="#">English <span class="flag gb"></span></a></li>
+		    {% for translation in resource.translations %}
+		    <li><a href="{{ content_url(translation.url) }}">{{ languages[translation.meta.language] }} <span class="flag {{ translation.meta.language }}"></span></a></li>
+		    {% endfor %}
 		  </ul>
 		</li>
+
 		<li class="divider-vertical"></li>
 	      </ul>
 	    </div>
