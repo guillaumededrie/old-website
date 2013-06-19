@@ -73,22 +73,29 @@
 	<div id="page-wrapper">
 	  <div class="navbar">
 	    <div class="navbar-inner">
-	      {% if resource.meta.language %}
+	      <form class="navbar-search pull-left">
+	        <input type="text" class="search-query" placeholder="Search on this site">
+              </form>
+
 	      <ul class="nav pull-right">
+	        {% if resource.meta.language %}
 		<li class="divider-vertical"></li>
 		{# Translation module #}
+		{% macro render_language_li(lang) %}{{ languages[lang] }} <span class="flag {{ lang if lang != "en" else "gb"  }}"></span> {% endmacro %}
 		<li class="dropdown f16">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ languages[resource.meta.language] }} <span class="flag {{ resource.meta.language }}"></span> <b class="caret"></b></a>
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ render_language_li(resource.meta.language) }} <b class="caret"></b></a>
 		  <ul class="dropdown-menu">
 		    {% for translation in resource.translations %}
-		    <li><a href="{{ content_url(translation.url) }}">{{ languages[translation.meta.language] }} <span class="flag {{ translation.meta.language }}"></span></a></li>
+		    <li><a href="{{ content_url(translation.url) }}">{{ render_language_li(translation.meta.language) }}</a></li>
+		    {% else %}
+		    <li class="disabled"><a href="#">No other languages available</a></li>
 		    {% endfor %}
 		  </ul>
 		</li>
-
+                {% endif %}
 		<li class="divider-vertical"></li>
 	      </ul>
-              {% endif %}
+
 	    </div>
 	  </div><!-- end navbar -->
 
@@ -122,15 +129,15 @@
 			<button type="submit" class="btn">{{ resource.meta.l10n.search|e }}</button>
 		      </div>
 		    </form>
-		  </div><!-- end #search -->
+		  </div><!-- /#search -->
 		  <hr />
 
-		</div><!-- end span3 -->
-	      </div><!-- end sidebar -->
-	    </div><!-- end container -->
+		</div><!-- /.span3 -->
+	      </div><!-- /#sidebar -->
+	    </div><!-- /.container -->
 	    <div id="push"></div>
-	  </div><!-- end main-wrapper -->
-	</div><!-- end page-wrapper -->
+	  </div><!-- /#main-wrapper -->
+	</div><!-- /#page-wrapper -->
 
         <footer id="footer">
 	  <div class="container text-center">
@@ -150,9 +157,9 @@
 	      </div><!-- end .span4 -->
 	      <div class="span4">
 		<h4>{{ resource.meta.l10n.follow_me|e }}</h4>
-	      </div><!-- end .span8 -->
-	    </div><!-- end .row-fluid -->
-	  </div><!-- end .container -->
+	      </div><!-- /.span8 -->
+	    </div><!-- /.row-fluid -->
+	  </div><!-- /.container -->
         </footer>
 
 	{% block bottomjs %}
