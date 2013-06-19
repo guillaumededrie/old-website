@@ -71,11 +71,10 @@
             <![endif]-->
 
 	<div id="page-wrapper">
-
 	  <div class="navbar">
 	    <div class="navbar-inner">
+	      {% if resource.meta.language %}
 	      <ul class="nav pull-right">
-
 		<li class="divider-vertical"></li>
 		{# Translation module #}
 		<li class="dropdown f16">
@@ -89,6 +88,7 @@
 
 		<li class="divider-vertical"></li>
 	      </ul>
+              {% endif %}
 	    </div>
 	  </div><!-- end navbar -->
 
