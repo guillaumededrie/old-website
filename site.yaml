@@ -2,14 +2,16 @@ mode: development
 media_root: media
 media_url: /media
 base_url: /
+
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
     - hyde.ext.plugins.meta.AutoExtendPlugin
     - hyde.ext.plugins.meta.SorterPlugin
     - hyde.ext.plugins.meta.TaggerPlugin
-    - hyde.ext.plugins.text.SyntextPlugin
     - hyde.ext.plugins.text.TextlinksPlugin
+    - hyde.ext.plugins.text.SyntextPlugin
     - hyde.ext.plugins.languages.LanguagePlugin
+
 context:
     data:
         tweet_via: guillaumededrie
@@ -17,6 +19,7 @@ context:
         languages:
             fr: Français
             en: English
+
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2013-06-10 00:00:00

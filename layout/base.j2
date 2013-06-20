@@ -3,6 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<htlm lang="{{ resource.meta.language if resource.meta.language else "en" }}">
     <head>
         <meta charset="{{ resource.meta.charset }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -97,7 +98,7 @@
 	      </ul>
 
 	    </div>
-	  </div><!-- end navbar -->
+	  </div><!-- /.navbar -->
 
 	  <div id="main-wrapper">
 	    <div class="container">
@@ -114,29 +115,10 @@
 
 	      <hr />
 
-	      <div class="row-fluid">
-		<div id="main-content" class="span9">
-		  {% block main %}{% endblock main %}
-		</div><!-- end span9 -->
-
-
-		<div id="sidebar" class="span3">
-		  <div id="search">
-		    <h4>Rechercher sur ce site</h4>
-		    <form class="form-search">
-		      <div class="input-append">
-			<input type="text" class="span8 search-query">
-			<button type="submit" class="btn">{{ resource.meta.l10n.search|e }}</button>
-		      </div>
-		    </form>
-		  </div><!-- /#search -->
-		  <hr />
-
-		</div><!-- /.span3 -->
-	      </div><!-- /#sidebar -->
+	      {% block main %}{% endblock main %}
 	    </div><!-- /.container -->
-	    <div id="push"></div>
 	  </div><!-- /#main-wrapper -->
+	  <div id="push"></div>
 	</div><!-- /#page-wrapper -->
 
         <footer id="footer">
