@@ -5,10 +5,9 @@ title: Index
 description: test
 ---
 
-You can see the website in 
 
-<ul>
-{% for code, lang in languages %}
-  <li><a href="{{ content_url(code) }}">{{lang}}</a></li>
-{% endfor %}
-</ul>
+<ul class="inline text-center f32">
+  {% for code, lang in languages %}
+  <li><a href="{{ content_url(code) }}"><span class="flag {{ code if code != "en" else "gb"  }}"></span> {{ lang }}</a><li>
+  {% endfor %}
+</ul><!-- /ul -->
