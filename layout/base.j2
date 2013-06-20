@@ -3,7 +3,6 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<htlm lang="{{ resource.meta.language if resource.meta.language else "en" }}">
     <head>
         <meta charset="{{ resource.meta.charset }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -139,6 +138,13 @@
 	      </div><!-- end .span4 -->
 	      <div class="span4">
 		<h4>{{ resource.meta.l10n.follow_me|e }}</h4>
+		<ul id="follow-me-icons" class="inline">
+		  <li><a aria-hidden="true" data-icon="&#xe000;" href="https://github.com/guillaumededrie"></a></li>
+		  <li><a aria-hidden="true" data-icon="&#xe004;" href="https://twitter.com/guillaumededrie"></a></li>
+		  <li><a aria-hidden="true" data-icon="&#xe001;" href="http://www.linkedin.com/in/guillaumededrie"></a></li>
+		  <li><a aria-hidden="true" data-icon="&#xe005;" href="https://plus.google.com/103829955487321782441"></a></li>
+		  <li><a aria-hidden="true" data-icon="&#xe002;" href="https://www.facebook.com/guillaume.dedrie"></a></li>
+		</ul>
 	      </div><!-- /.span8 -->
 	    </div><!-- /.row-fluid -->
 	  </div><!-- /.container -->

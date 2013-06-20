@@ -9,6 +9,8 @@
 !!python/unicode 'media/css/main.css': []
 !!python/unicode 'media/css/site.css': []
 !!python/unicode 'media/css/syntax.css': []
+!!python/unicode 'media/fonts/icomoon.dev.svg': []
+!!python/unicode 'media/fonts/icomoon.svg': []
 !!python/unicode 'media/index.html': []
 !!python/unicode 'media/js/libs/dd_belatedpng.js': []
 !!python/unicode 'media/js/libs/jquery-1.5.1.min.js': []
