@@ -12,7 +12,7 @@ description: test
 
 <ul class="inline text-center">
   {% for code, lang in languages %}
-    <li><a href="{{ content_url(code) }}" class="btn btn-large btn-primary"><span class="flag {{ code if code != "en" else "gb"  }}"></span> {{ lang }}</a></li>
+    <li><a href="{{ content_url(code) }}" class="btn btn-large btn-primary">{{ lang }}</a></li>
   {% endfor %}
 </ul>
 
