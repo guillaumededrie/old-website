@@ -10,9 +10,10 @@ menu:
      name: "Projects"
      page: "projets.html"
 l10n:
+  read_more: "read more"
   search: "Search"
-  follow_me: "Follow me"
+  follow_me: "Stay in touch"
   about_this_site: "About this website"
   licence: <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
   powered_using: "Powered using"
-  source_available: "Sources available on"
+  source_available: "Sources vailable on"

@@ -7,9 +7,16 @@ menu:
      name: "Blog"
      page: "blog/"
   -
+     name: "Qui suis-je ?"
+     page: "qui-suis-je.html"
+  -
      name: "Projets"
      page: "projets.html"
+  -
+     name: "À propos"
+     page: "a-propos.html"
 l10n:
+  read_more: "lire plus"
   search: "Rechercher"
   follow_me: "Me suivre"
   about_this_site: "À propos de ce site"
