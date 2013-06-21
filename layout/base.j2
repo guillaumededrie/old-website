@@ -33,7 +33,16 @@
 	  }
 
 	  #footer {
-          background-color: #f5f5f5;
+          background: none repeat scroll 0% 0% rgb(60, 60, 60);
+	  color: white;
+	  }
+
+	  #footer a {
+	  color: rgb(78, 174, 164);
+	  }
+
+	  #footer h4 {
+	  text-decoration: underline;
 	  }
 
 	  #main-content {
@@ -121,8 +130,8 @@
 	</div><!-- /#page-wrapper -->
 
         <footer id="footer">
-	  <div class="container text-center">
-	    <div class="row-fluid">
+	  <div class="container">
+	    <div class="row-fluid text-center">
 	      <div class="span8">
 		<h4>{{ resource.meta.l10n.about_this_site|e }}</h4>
 		<div class="row-fluid">
@@ -145,7 +154,10 @@
 		  <li><a aria-hidden="true" data-icon="&#xe005;" href="https://plus.google.com/103829955487321782441"></a></li>
 		  <li><a aria-hidden="true" data-icon="&#xe002;" href="https://www.facebook.com/guillaume.dedrie"></a></li>
 		</ul>
-	      </div><!-- /.span8 -->
+	      </div><!-- /.span4 -->
+	    </div><!-- /.row-fluid -->
+	    <div class="row-fluid">
+	      © 2013 / Guillaume Dedrie
 	    </div><!-- /.row-fluid -->
 	  </div><!-- /.container -->
         </footer>

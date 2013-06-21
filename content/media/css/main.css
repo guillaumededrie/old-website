@@ -66,5 +66,5 @@ you can use the generic selector below, but it's slower:
 }
 
 #follow-me-icons a:hover {
-    color: black;
+    color: white;
 }
