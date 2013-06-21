@@ -5,9 +5,19 @@ title: Index
 description: test
 ---
 
+<h2>Sorry ...</h2>
+<p class="lead">
+... We are currently not able to choose a language for you. Please select one of the list to continue :
+</p>
 
-<ul class="inline text-center f32">
+<ul class="inline text-center">
   {% for code, lang in languages %}
-  <li><a href="{{ content_url(code) }}"><span class="flag {{ code if code != "en" else "gb"  }}"></span> {{ lang }}</a><li>
+    <li><a href="{{ content_url(code) }}" class="btn btn-large btn-primary"><span class="flag {{ code if code != "en" else "gb"  }}"></span> {{ lang }}</a></li>
   {% endfor %}
-</ul><!-- /ul -->
+</ul>
+
+
+<blockquote class="pull-right">
+  <p>« Il y a un langage pour chaque situation. »</p>
+  <small>Gilbert LaRocque</small>
+</blockquote>

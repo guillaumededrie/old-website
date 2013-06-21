@@ -46,9 +46,12 @@
 	  color: white;
 	  }
 
-	  #main-content {
+	  #main {
 	  padding: 0px 7px;
-	  border-right: 1px solid #f5f5f5;
+	  }
+
+	  #main blockquote {
+	  margin-top: 40px;
 	  }
 
 	  #main-wrapper {
@@ -124,7 +127,9 @@
 
 	      <hr />
 
-	      {% block main %}{% endblock main %}
+	      <div id="main">
+		{% block main %}{% endblock main %}
+	      </div>
 	    </div><!-- /.container -->
 	  </div><!-- /#main-wrapper -->
 	  <div id="push"></div>
