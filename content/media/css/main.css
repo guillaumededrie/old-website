@@ -60,6 +60,11 @@ you can use the generic selector below, but it's slower:
    Author's custom styles
    ========================================================================== */
 
+body {
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+
 #follow-me-icons a {
     text-decoration: none;
     font-size: 32px;
@@ -68,4 +73,30 @@ you can use the generic selector below, but it's slower:
 
 #follow-me-icons a:hover {
     color: black;
+}
+
+
+#main h2:after,
+#main h3:after,
+#main h4:after {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 5px;
+	border-radius: 2px;
+}
+#main h2:after { background: rgb(0, 136, 204); }
+#main h3:after { background: #3BF; }
+#main h4:after { background: #6Cf; }
+
+
+#main h2,
+#main h3,
+#main h4 {
+	margin: 1em 0 .6em 0;
+	padding: 0 0 0 20px;
+	font-weight: normal;
+	position: relative;
 }
