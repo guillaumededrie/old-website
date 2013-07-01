@@ -13,6 +13,7 @@
 	{% block css %}
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap.min.css') }}">
         <style>
+
 	  html, body {
 	     height: 100%;
 	  }
@@ -32,20 +33,10 @@
           height: 160px;
 	  }
 
-	  #footer {
-          background: none repeat scroll 0% 0% rgb(45, 45, 45);
-	  color: white;
-	  }
-
 
 	  #footer h4 {
 	  text-decoration: underline;
 	  }
-
-	  #validators a {
-	  color: white;
-	  }
-
 
 	  #main-wrapper {
 	  font-size: 1.4em;
@@ -139,6 +130,8 @@
 
         <footer id="footer">
 	  <div class="container">
+	    <hr />
+	    
 	    <div class="row-fluid text-center">
 	      <div class="span9">
 		<h4>{{ resource.meta.l10n.about_this_site|e }}</h4>
