@@ -22,7 +22,7 @@
 
 	{% block topjs -%}
         <script src="{{ media_url('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
-	{%- endblock topjs %}
+	{% endblock topjs -%}
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -80,10 +80,9 @@
 	  <div id="push"></div>
 	</div><!-- /#page-wrapper -->
 
-        <footer id="footer">
-	  <div class="container">
 
-	    
+        <footer id="footer">
+	  <div class="container">	    
 	    <div class="row-fluid text-center">
 	      <div class="span9">
 		<h4>{{ resource.meta.l10n.about_this_site|e }}</h4>
@@ -98,7 +97,7 @@
 		    <p>Validators : <a aria-hidden="true" data-icon="&#xe006;" href=""></a> <a aria-hidden="true" data-icon="&#xe007;" href=""></a></p>
 		  </div>
 		</div>
-	      </div><!-- /.span4 -->
+	      </div><!-- /.span9 -->
 	      <div class="span3">
 		<h4>{{ resource.meta.l10n.follow_me|e }}</h4>
 		<ul id="follow-me-icons" class="inline">
@@ -108,13 +107,14 @@
 		  <li><a aria-hidden="true" data-icon="&#xe005;" data-toggle="tooltip" title="Google+" href="https://plus.google.com/103829955487321782441"></a></li>
 		  <li><a aria-hidden="true" data-icon="&#xe002;" data-toggle="tooltip" title="Facebook" href="https://www.facebook.com/guillaume.dedrie"></a></li>
 		</ul>
-	      </div><!-- /.span4 -->
+	      </div><!-- /.span3 -->
 	    </div><!-- /.row-fluid -->
 	    <div id="legal-informations" class="row-fluid text-center">
 		2013 / Guillaume Dedrie
 	    </div><!-- /.row-fluid -->
 	  </div><!-- /.container -->
         </footer>
+
 
 	{% block bottomjs -%}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
