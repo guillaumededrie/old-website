@@ -3,12 +3,6 @@ menu:
   -
      name: "Homepage"
      page: "index.html"
-  -
-     name: "Blog"
-     page: "blog/"
-  -
-     name: "Projects"
-     page: "projets.html"
 l10n:
   read_more: "read more"
   search: "Search"

@@ -1,3 +1,55 @@
+html, body {
+    height: 100%;
+}
+
+
+/* Wrapper for page content to push down footer */
+#page-wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -160px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: 160px;
+}
+
+footer {
+    background-color: rgb(246,246,242);
+    border-top: 1px solid lightgray;
+}
+
+#footer h4 {
+    text-decoration: underline;
+}
+
+#main-wrapper {
+    font-size: 1.4em;
+    line-height: 1.6em;
+}
+
+
+#main blockquote {
+    margin-top: 40px;
+}
+
+#main-wrapper {
+    margin-bottom: 20px;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
 
 /* using icomoon.io/app */
 @font-face {
@@ -10,6 +62,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
 	font-family: 'icomoon';
@@ -59,12 +112,43 @@ you can use the generic selector below, but it's slower:
    Author's custom styles
    ========================================================================== */
 
+body {
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+
 #follow-me-icons a {
     text-decoration: none;
     font-size: 32px;
-    color: gray;
+    color: lightgray;
 }
 
 #follow-me-icons a:hover {
-    color: white;
+    color: black;
+}
+
+
+#main h2:after,
+#main h3:after,
+#main h4:after {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 5px;
+	border-radius: 2px;
+}
+#main h2:after { background: rgb(0, 136, 204); }
+#main h3:after { background: #3BF; }
+#main h4:after { background: #6Cf; }
+
+
+#main h2,
+#main h3,
+#main h4 {
+	margin: 1em 0 .6em 0;
+	padding: 0 0 0 20px;
+	font-weight: normal;
+	position: relative;
 }
