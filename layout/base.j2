@@ -10,72 +10,19 @@
         <meta name="description" content="{{ resource.meta.description }}">
         <meta name="viewport" content="width=device-width">
 
-	{% block css %}
+	{% block css -%}
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap.min.css') }}">
         <style>
-
-	  html, body {
-	     height: 100%;
-	  }
-
-
-      /* Wrapper for page content to push down footer */
-      #page-wrapper {
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        /* Negative indent footer by it's height */
-        margin: 0 auto -160px;
-      }
-
-	  /* Set the fixed height of the footer here */
-	  #push,
-	  #footer {
-          height: 160px;
-	  }
-
-	  footer {
-	  background-color: rgb(246,246,242);
-	  border-top: 1px solid lightgray;
-	  }
-
-	  #footer h4 {
-	  text-decoration: underline;
-	  }
-
-	  #main-wrapper {
-	  font-size: 1.4em;
-	  line-height: 1.6em;
-	  }
-
-
-	  #main blockquote {
-	  margin-top: 40px;
-	  }
-
-	  #main-wrapper {
-	  margin-bottom: 20px;
-	  }
-
-      /* Lastly, apply responsive CSS fixes as necessary */
-      @media (max-width: 767px) {
-        #footer {
-          margin-left: -20px;
-          margin-right: -20px;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-      }
         </style>
 
         <link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.min.css') }}">
         <link rel="stylesheet" href="{{ media_url('css/main.css') }}">
 	<link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags16.css" />
-	{% endblock css %}
+	{%- endblock css %}
 
-	{% block topjs %}
+	{% block topjs -%}
         <script src="{{ media_url('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
-	{% endblock topjs %}
+	{%- endblock topjs %}
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -90,36 +37,35 @@
               </form>
 
 	      <ul class="nav pull-right">
-	        {% if resource.meta.language %}
+		{% if resource.meta.language -%}
 		<li class="divider-vertical"></li>
 		{# Translation module #}
-		{% macro render_language_li(lang) %}{{ languages[lang] }} <span class="flag {{ lang if lang != "en" else "gb"  }}"></span> {% endmacro %}
+		{%- macro render_language_li(lang) -%}{{ languages[lang] }} <span class="flag {{ lang if lang != "en" else "gb"  }}"></span> {%- endmacro -%}
 		<li class="dropdown f16">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ render_language_li(resource.meta.language) }} <b class="caret"></b></a>
 		  <ul class="dropdown-menu">
-		    {% for translation in resource.translations %}
+		    {% for translation in resource.translations -%}
 		    <li><a href="{{ content_url(translation.url) }}">{{ render_language_li(translation.meta.language) }}</a></li>
-		    {% else %}
+		    {% else -%}
 		    <li class="disabled"><a href="#">No other languages available</a></li>
-		    {% endfor %}
+		    {% endfor -%}
 		  </ul>
 		</li>
-                {% endif %}
+                {% endif -%}
 		<li class="divider-vertical"></li>
 	      </ul>
-
-	    </div>
+	    </div><!-- /.navbar-inner -->
 	  </div><!-- /.navbar -->
+
 
 	  <div id="main-wrapper">
 	    <div class="container">
 	      <header>
 		<ul class="nav nav-pills pull-right">
-		  {# Menu generation #}
-		  {% for menu in resource.meta.menu %}
-		  <li{% if content_url(resource.url).startswith(content_url(resource.meta.language + '/' + menu['page'])) %} class="active"{% endif %}><a href="{{ content_url(resource.meta.language + '/' + menu['page']) }}">{{ menu['name']|e }}</a>
-		  </li>
-		  {% endfor %}
+		  {# Menu generation -#}
+		  {% for menu in resource.meta.menu -%}
+		  <li{% if content_url(resource.url).startswith(content_url(resource.meta.language + '/' + menu['page'])) %} class="active"{% endif %}><a href="{{ content_url(resource.meta.language + '/' + menu['page']) }}">{{ menu['name']|e }}</a></li>
+		  {% endfor -%}
 		</ul>
 		<h1>Guillaume Dedrie</h1>
 	      </header>
@@ -127,8 +73,8 @@
 	      <hr />
 
 	      <div id="main">
-		{% block main %}{% endblock main %}
-	      </div>
+		{% block main -%}{%- endblock main %}
+	      </div><!-- /#main -->
 	    </div><!-- /.container -->
 	  </div><!-- /#main-wrapper -->
 	  <div id="push"></div>
@@ -144,7 +90,7 @@
 		<div class="row-fluid">
 		  <div id="licence" class="span6">
 		    {{ resource.meta.l10n.licence }}
-		  </div><!-- end #licence -->
+		  </div><!-- /#licence -->
 
 		  <div class="span6">
 		    <p>{{ resource.meta.l10n.powered_using|e }} <a href="http://ringce.com/hyde">Hyde</a>, <a href="http://www.initializr.com/">Initializr</a>.</p>
@@ -152,7 +98,7 @@
 		    <p>Validators : <a aria-hidden="true" data-icon="&#xe006;" href=""></a> <a aria-hidden="true" data-icon="&#xe007;" href=""></a></p>
 		  </div>
 		</div>
-	      </div><!-- end .span4 -->
+	      </div><!-- /.span4 -->
 	      <div class="span3">
 		<h4>{{ resource.meta.l10n.follow_me|e }}</h4>
 		<ul id="follow-me-icons" class="inline">
@@ -170,7 +116,7 @@
 	  </div><!-- /.container -->
         </footer>
 
-	{% block bottomjs %}
+	{% block bottomjs -%}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{ media_url('js/vendor/jquery-1.9.1.min.js') }}"><\/script>')</script>
 
@@ -187,7 +133,6 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 	-->
-        {% endblock bottomjs %}
-
+        {% endblock bottomjs -%}
     </body>
 </html>
