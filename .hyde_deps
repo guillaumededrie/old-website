@@ -2,6 +2,7 @@
 !!python/unicode 'fr/a-propos.html': [base.j2]
 !!python/unicode 'fr/blog/index.html': [base.j2]
 !!python/unicode 'fr/index.html': [base.j2]
+!!python/unicode 'fr/mentions-legales.html': [base.j2]
 !!python/unicode 'fr/projets.html': [base.j2]
 !!python/unicode 'fr/qui-suis-je.html': [base.j2]
 !!python/unicode 'index.html': [base.j2]
