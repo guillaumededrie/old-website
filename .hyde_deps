@@ -5,7 +5,6 @@
 !!python/unicode 'fr/mentions-legales.html': [base.j2]
 !!python/unicode 'fr/mon-cv.html': [base.j2]
 !!python/unicode 'fr/projets.html': [base.j2]
-!!python/unicode 'fr/qui-suis-je.html': [base.j2]
 !!python/unicode 'index.html': [base.j2]
 !!python/unicode 'media/css/bootstrap-responsive.css': []
 !!python/unicode 'media/css/bootstrap-responsive.min.css': []
