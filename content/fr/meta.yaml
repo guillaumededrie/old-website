@@ -7,8 +7,8 @@ menu:
      name: "Blog"
      page: "blog/"
   -
-     name: "Qui suis-je ?"
-     page: "qui-suis-je.html"
+     name: "Mon CV"
+     page: "mon-cv.html"
   -
      name: "Projets"
      page: "projets.html"
