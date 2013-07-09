@@ -19,10 +19,16 @@ context:
         languages:
             fr: Français
             en: English
-
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2013-06-10 00:00:00
     author: Guillaume Dedrie
     charset: utf-8
     usedisqus: false
+sorter:
+  time:
+    attr: meta.created
+    reverse: True
+    filters:
+      source_file.kind: html
+      is_processable: True

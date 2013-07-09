@@ -82,6 +82,7 @@ body {
     width: 5px;
     border-radius: 2px;
 }
+
 #main h2:after { background: rgb(0, 136, 204); }
 #main h3:after { background: #3BF; }
 #main h4:after { background: #6Cf; }
@@ -117,4 +118,24 @@ body {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     padding-left: 5px;
+}
+
+a.tag {
+    background-color: gray;
+    white-space: nowrap;
+    color: white;
+    padding: 3px;
+}
+
+a.tag:before {
+    font-family: 'icomoon';
+    /* font-size: 0.7em; */
+    content: "\f02b";
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 4px;
 }
