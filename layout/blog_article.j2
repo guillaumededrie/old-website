@@ -6,7 +6,7 @@
 </ul>
 
 <h2>{{ resource.meta.title|e }}</h2>
-<small><span data-icon="&#xf073;"></span> {{ resource.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in resource.meta.tags %}{{ render_tag(tag) }} {% endfor %}</small>
+<span class="muted"><small><span data-icon="&#xf073;"></span> {{ resource.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in resource.meta.tags %}{{ render_tag(tag) }} {% endfor %}</small></span>
 <hr />
 
 
