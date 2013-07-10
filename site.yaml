@@ -32,3 +32,5 @@ sorter:
     filters:
       source_file.kind: html
       is_processable: True
+tagger:
+  sorter: time

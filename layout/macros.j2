@@ -38,3 +38,8 @@
 </nav>
 {%- endif %}
 {%- endmacro %}
+
+
+{% macro render_tag(tagname, number_articles = '') -%}
+<a class="tag label label-info" href="{{ content_url(resource.meta.language + "/blog/tags/" + tagname + ".html") }}">{{ tagname }} {% if number_articles %}({{ number_articles }}){% endif %}</a>
+{%- endmacro %}
