@@ -9,7 +9,7 @@ description: Mon Blog en cours de construction.
 <h2>{{ node.name }}</h2>
 {% for article in node.walk_resources_sorted_by_time() %}
 <article>
-  <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> | <small><span data-icon="&#xf02c;"></span> Tags : {% for tag in article.meta.tags %} <a class="tag" href="#">{{ tag }}</a> {% endfor %}</small></h3>
+  <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> |  <small><span data-icon="&#xf073;"></span> {{ article.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in article.meta.tags %} <a class="tag label label-info" href="#">{{ tag }}</a> {% endfor %}</small></h3>
 </article>
 {% endfor %}
 {% endfor %}

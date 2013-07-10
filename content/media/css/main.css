@@ -121,9 +121,7 @@ body {
 }
 
 a.tag {
-    background-color: gray;
     white-space: nowrap;
-    color: white;
     padding: 3px;
 }
 
