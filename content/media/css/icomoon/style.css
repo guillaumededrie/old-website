@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-linkedin, .icon-google-plus, .icon-facebook, .icon-skype, .icon-html5, .icon-css3, .icon-mail, .icon-feed, .icon-twitter, .icon-tag, .icon-external-link, .icon-github, .icon-tags, .icon-calendar {
+.icon-linkedin, .icon-google-plus, .icon-facebook, .icon-skype, .icon-html5, .icon-css3, .icon-mail, .icon-feed, .icon-twitter, .icon-tag, .icon-external-link, .icon-github, .icon-tags, .icon-calendar, .icon-user {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -78,4 +78,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon-calendar:before {
 	content: "\f073";
+}
+.icon-user:before {
+	content: "\e000";
 }

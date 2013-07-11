@@ -2,10 +2,10 @@
 !!python/unicode 'blog/tags/testons.html': [base.j2]
 !!python/unicode 'en/index.html': [base.j2]
 !!python/unicode 'fr/a-propos.html': [base.j2]
-!!python/unicode 'fr/blog/2013/inauguration-site-internet.html': [base_blog.j2, blog_article.j2,
+!!python/unicode 'fr/blog/2013/inauguration-site-internet.html': [blog_article.j2,
   macros.j2, base.j2]
 !!python/unicode 'fr/blog/2013/premier-article.html': [base.j2]
-!!python/unicode 'fr/blog/index.html': [base_blog.j2, macros.j2, base.j2]
+!!python/unicode 'fr/blog/index.html': [macros.j2, base.j2]
 !!python/unicode 'fr/index.html': [base.j2]
 !!python/unicode 'fr/mentions-legales.html': [base.j2]
 !!python/unicode 'fr/mon-cv.html': [base.j2]

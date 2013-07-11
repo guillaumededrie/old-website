@@ -1,14 +1,18 @@
-{% extends "base_blog.j2" %}
+{% extends "base.j2" %}
+{% from "macros.j2" import render_tag with context %}   
 
-{% block main_blog -%}
+{% block main -%}
 <ul class="pager">
   <li class="previous"><a href="{{ content_url(resource.meta.language + "/blog/") }}">&larr; Retour</a></li>
 </ul>
 
 <h2>{{ resource.meta.title|e }}</h2>
-<span class="muted"><small><span data-icon="&#xf073;"></span> {{ resource.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in resource.meta.tags %}{{ render_tag(tag) }} {% endfor %}</small></span>
-<hr />
 
+<div class="muted text-center">
+  <span data-icon="&#xf073;"></span> {{ resource.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in resource.meta.tags %}{{ render_tag(tag) }} {% endfor %} | <span data-icon="&#xe000;"></span> <a href="http://guillaume.dedrie.fr">Guillaume Dedrie</a>
+</div>
 
+<div id="main_article">
 {% block main_article -%}{%- endblock main_article %}
-{%- endblock main_blog %}
+</div><!-- /#main_article -->
+{%- endblock main %}

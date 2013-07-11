@@ -1,16 +1,24 @@
 ---
-extends: base_blog.j2
-default_block: main_blog
+extends: base.j2
+default_block: main
 title: Blog
 description: Mon Blog en cours de construction.
 ---
 {% from "macros.j2" import render_tag with context %}
 
-{% for node in resource.node.child_nodes|sort(attribute="name", reverse=True) %}
-<h2>{{ node.name }}</h2>
-{% for article in node.walk_resources_sorted_by_time() %}
-<article>
-  <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small><span data-icon="&#xf073;"></span> {{ article.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in article.meta.tags %}{{ render_tag(tag) }} {% endfor %}</small></h3>
-</article>
-{% endfor %}
-{% endfor %}
+<div class="row-fluid">
+  <div class="span9">
+    {% for node in resource.node.child_nodes|sort(attribute="name", reverse=True) %}
+    <h2>{{ node.name }}</h2>
+    {% for article in node.walk_resources_sorted_by_time() %}
+    <article>
+      <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small><span data-icon="&#xf073;"></span> {{ article.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in article.meta.tags %}{{ render_tag(tag) }} {% endfor %} | <span data-icon="&#xe000;"></span> <a href="http://guillaume.dedrie.fr">Guillaume Dedrie</a></small></h3>
+    </article>
+    {% endfor %}
+    {% endfor %}
+  </div><!-- /.span9 -->
+  <div class="span3">
+    <h3><span data-icon="&#xf02c;"></span> Tags</h3>
+    {% for tag, meta in site.tagger.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %}
+  </div><!-- /.span3 -->  
+</div><!-- /.row-fluid -->
