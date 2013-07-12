@@ -19,12 +19,14 @@ context:
         languages:
             fr: Français
             en: English
+
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2013-06-10 00:00:00
     author: Guillaume Dedrie
     charset: utf-8
     usedisqus: false
+
 sorter:
   time:
     attr: meta.created
@@ -32,5 +34,12 @@ sorter:
     filters:
       source_file.kind: html
       is_processable: true
+
 tagger:
   sorter: time
+  archives:
+    frblog:
+      source: fr/blog/post
+      target: fr/blog/tag
+      template: blog_tag.j2
+      archive_extension: html

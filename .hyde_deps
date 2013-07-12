@@ -10,7 +10,11 @@
   macros.j2, base.j2]
 !!python/unicode 'fr/blog/posts/inauguration-site-internet.html': [blog_article.j2,
   macros.j2, base.j2]
+!!python/unicode 'fr/blog/tag/test.html': [blog_tag.j2, base.j2, macros.j2]
+!!python/unicode 'fr/blog/tag/testons.html': [blog_tag.j2, base.j2, macros.j2]
 !!python/unicode 'fr/blog/tags.html': [macros.j2, base.j2]
+!!python/unicode 'fr/blog/tags/test.html': [base.j2]
+!!python/unicode 'fr/blog/tags/testons.html': [base.j2]
 !!python/unicode 'fr/index.html': [base.j2]
 !!python/unicode 'fr/mentions-legales.html': [base.j2]
 !!python/unicode 'fr/mon-cv.html': [base.j2]
