@@ -28,9 +28,9 @@ meta:
 sorter:
   time:
     attr: meta.created
-    reverse: True
+    reverse: true
     filters:
       source_file.kind: html
-      is_processable: True
+      is_processable: true
 tagger:
   sorter: time

@@ -1,5 +1,5 @@
 {% extends "base.j2" %}
-{% from "macros.j2" import render_tag with context %}   
+{% from "macros.j2" import render_article_infos with context %}   
 
 {% block main -%}
 <ul class="pager">
@@ -9,7 +9,7 @@
 <h2>{{ resource.meta.title|e }}</h2>
 
 <div class="muted text-center">
-  <span data-icon="&#xf073;"></span> {{ resource.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in resource.meta.tags %}{{ render_tag(tag) }} {% endfor %} | <span data-icon="&#xe000;"></span> <a href="http://guillaume.dedrie.fr">Guillaume Dedrie</a>
+  {{ render_article_infos(resource) }}
 </div>
 
 <div id="main_article">

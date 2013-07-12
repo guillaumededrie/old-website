@@ -4,17 +4,15 @@ default_block: main
 title: Blog
 description: Mon Blog en cours de construction.
 ---
-{% from "macros.j2" import render_tag with context %}
+{% from "macros.j2" import render_article_infos, render_tag with context %}
 
 <div class="row-fluid">
   <div class="span9">
-    {% for node in resource.node.child_nodes|sort(attribute="name", reverse=True) %}
-    <h2>{{ node.name }}</h2>
-    {% for article in node.walk_resources_sorted_by_time() %}
+    <h2>Articles</h2>
+    {% for article in site.content.node_from_relative_path('fr/blog/post/').walk_resources_sorted_by_time() %}
     <article>
-      <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small><span data-icon="&#xf073;"></span> {{ article.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in article.meta.tags %}{{ render_tag(tag) }} {% endfor %} | <span data-icon="&#xe000;"></span> <a href="http://guillaume.dedrie.fr">Guillaume Dedrie</a></small></h3>
+      <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small>{{ render_article_infos(article) }}</small></h3>
     </article>
-    {% endfor %}
     {% endfor %}
   </div><!-- /.span9 -->
   <div class="span3">
