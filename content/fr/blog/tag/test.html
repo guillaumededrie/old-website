@@ -1,0 +1,9 @@
+---
+extends: false
+
+---
+
+{% set tag = site.tagger.tags['test'] %}
+{% set source = site.content.node_from_relative_path('post') %}
+{% set walker = source['walk_resources_tagged_with_test'] %}
+{% extends "blog_tag.j2" %}
