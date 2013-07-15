@@ -1,5 +1,6 @@
 !!python/unicode 'blog/tags/test.html': [base.j2]
 !!python/unicode 'blog/tags/testons.html': [base.j2]
+!!python/unicode 'en/404.html': [base.j2]
 !!python/unicode 'en/index.html': [base.j2]
 !!python/unicode 'fr/404.html': [base.j2]
 !!python/unicode 'fr/a-propos.html': [base.j2]
@@ -45,3 +46,4 @@
 !!python/unicode 'media/js/vendor/bootstrap.min.js': []
 !!python/unicode 'media/js/vendor/jquery-1.9.1.min.js': []
 !!python/unicode 'media/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js': []
+!!python/unicode 'nginx.conf': []
