@@ -61,7 +61,7 @@
 		<ul class="nav nav-pills pull-right">
 		  {# Menu generation -#}
 		  {% for menu in resource.meta.menu -%}
-		  <li{% if content_url(resource.url).startswith(content_url(resource.meta.language + '/' + menu['page'])) %} class="active"{% endif %}><a href="{{ content_url(resource.meta.language + '/' + menu['page']) }}">{{ menu['name']|e }}</a></li>
+		  <li{% if (resource.meta.language + '/' + menu['page']) in resource.url %} class="active"{% endif %}><a href="{{ content_url(resource.meta.language + '/' + menu['page']) }}">{{ menu['name']|e }}</a></li>
 		  {% endfor -%}
 		</ul>
 		<h1>Guillaume Dedrie</h1>

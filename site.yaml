@@ -11,6 +11,7 @@ plugins:
     - hyde.ext.plugins.text.TextlinksPlugin
     - hyde.ext.plugins.text.SyntextPlugin
     - hyde.ext.plugins.languages.LanguagePlugin
+    - hyde.ext.plugins.urls.UrlCleanerPlugin
 
 context:
     data:
@@ -43,3 +44,9 @@ tagger:
       target: fr/blog/tag
       template: blog_tag.j2
       archive_extension: html
+
+urlcleaner:
+  index_file_names:
+    - index.html
+  strip_extensions:
+    - html
