@@ -28,6 +28,13 @@ meta:
     charset: utf-8
     usedisqus: false
 
+urlcleaner:
+  index_file_names:
+    - index.html
+  strip_extensions:
+    - html
+  append_slash: true
+
 sorter:
   time:
     attr: meta.created
@@ -44,10 +51,3 @@ tagger:
       target: fr/blog/tag
       template: blog_tag.j2
       archive_extension: html
-
-urlcleaner:
-  index_file_names:
-    - index.html
-  strip_extensions:
-    - html
-  append_slash: true
