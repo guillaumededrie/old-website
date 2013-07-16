@@ -138,3 +138,8 @@ a.tag:before {
     margin-right: 4px;
 }
 
+/* 404 page */
+iframe#notfound {
+    border: none;
+    width: 100%;
+}
