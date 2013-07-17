@@ -42,6 +42,7 @@ sorter:
     filters:
       source_file.kind: html
       is_processable: true
+      meta.is_article: true
 
 tagger:
   sorter: time

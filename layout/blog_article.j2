@@ -1,9 +1,13 @@
 {% extends "base.j2" %}
 {% from "macros.j2" import render_article_infos with context %}   
+{% set prev = resource.prev_by_time %}
+{% set next = resource.next_by_time %}
 
 {% block main -%}
 <ul class="pager">
-  <li class="previous"><a href="{{ content_url(resource.meta.language + "/blog/") }}">&larr; Retour</a></li>
+  <li class="previous{{ ' disabled' if not prev }}"><a href="{{ content_url(prev.url) if prev else '#' }}" title="{{ prev.meta.title }}" >&larr; {{ resource.meta.l10n.previous_article|e }}</a></li>
+  <li><a href="{{ content_url(resource.meta.language + '/blog/') }}">&uarr; {{ resource.meta.l10n.go_back_to_the_articles|e }} &uarr;</a></li>
+  <li class="next{{ ' disabled' if not next }}"><a href="{{ content_url(next.url) if next else '#' }}" title="{{ next.meta.title }}">{{ resource.meta.l10n.next_article|e }} &rarr;</a></li>
 </ul>
 
 <h2>{{ resource.meta.title|e }}</h2>

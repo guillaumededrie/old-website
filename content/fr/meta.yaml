@@ -23,5 +23,8 @@ l10n:
   licence: <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.fr"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />Ce(tte) œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.fr">Licence Creative Commons Attribution 3.0 non transposé</a>.
   powered_using: "Généré en utilisant"
   tagged_with: "Article(s) avec le tag"
-  go_back_to_the_blog: "Retour aux articles"
   source_available: "Sources disponibles sur"
+# pour le blog
+  next_article: "Article suivant"
+  previous_article: "Article précédent"
+  go_back_to_the_articles: "Revenir à la liste des articles"

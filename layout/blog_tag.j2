@@ -7,7 +7,7 @@
 <div class="row-fluid">
   <div class="span9">
     <ul class="pager">
-      <li class="previous"><a href="{{ content_url(resource.meta.language + "/blog/") }}">&larr; {{ resource.meta.l10n.go_back_to_the_blog|e }}</a></li>
+      <li class="previous"><a href="{{ content_url(resource.meta.language + "/blog/") }}">&larr; {{ resource.meta.l10n.go_back_to_the_articles|e }}</a></li>
     </ul>
 
     <h2>{{ resource.meta.l10n.tagged_with|e}} <span data-icon="&#xf02b;"></span> {{ tag.name }}</h2>
@@ -17,7 +17,6 @@
   </div><!-- /.span9 -->
   <div class="span3">
     <h3><span data-icon="&#xf02c;"></span> Tags</h3>
-    <hr />
     {% for tag, meta in site.tagger.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %}
   </div><!-- /.span3 -->  
 </div><!-- /.row-fluid -->
