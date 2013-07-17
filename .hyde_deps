@@ -9,6 +9,7 @@
 !!python/unicode 'fr/blog/2013/premier-article.html': [base.j2]
 !!python/unicode 'fr/blog/article/inauguration-site-internet.html': [blog_article.j2,
   macros.j2, base.j2]
+!!python/unicode 'fr/blog/article/test_2.html': [blog_article.j2, macros.j2, base.j2]
 !!python/unicode 'fr/blog/index.html': [macros.j2, base.j2]
 !!python/unicode 'fr/blog/post/inauguration-site-internet.html': [blog_article.j2,
   macros.j2, base.j2]
@@ -16,6 +17,7 @@
   macros.j2, base.j2]
 !!python/unicode 'fr/blog/tag/test.html': [blog_tag.j2, base.j2, macros.j2]
 !!python/unicode 'fr/blog/tag/testons.html': [blog_tag.j2, base.j2, macros.j2]
+!!python/unicode 'fr/blog/tag/toto.html': [blog_tag.j2, base.j2, macros.j2]
 !!python/unicode 'fr/blog/tags.html': [macros.j2, base.j2]
 !!python/unicode 'fr/blog/tags/test.html': [base.j2]
 !!python/unicode 'fr/blog/tags/testons.html': [base.j2]

@@ -11,7 +11,7 @@
     </ul>
 
     <h2>{{ resource.meta.l10n.tagged_with|e}} <span data-icon="&#xf02b;"></span> {{ tag.name }}</h2>
-    {% for article in site.content.walk_resources_tagged_with(tag) -%}
+    {% for article in site.content.walk_resources_tagged_with(tag)|reverse() -%}
     <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small>{{ render_article_infos(article) }}</small></h3>
     {%- endfor %}
   </div><!-- /.span9 -->

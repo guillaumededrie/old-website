@@ -3,13 +3,21 @@
 {% set prev = resource.prev_by_time %}
 {% set next = resource.next_by_time %}
 
-{% block main -%}
+{% macro render_article_pager() -%}
 <ul class="pager">
-  <li class="previous{{ ' disabled' if not prev }}"><a href="{{ content_url(prev.url) if prev else '#' }}" title="{{ prev.meta.title }}" >&larr; {{ resource.meta.l10n.previous_article|e }}</a></li>
+  {% if prev %}
+  <li class="previous"><a href="{{ content_url(prev.url) }}">&larr; {{ prev.meta.title|truncate(10, True) }}</a></li>
+  {% endif %}
   <li><a href="{{ content_url(resource.meta.language + '/blog/') }}">&uarr; {{ resource.meta.l10n.go_back_to_the_articles|e }} &uarr;</a></li>
-  <li class="next{{ ' disabled' if not next }}"><a href="{{ content_url(next.url) if next else '#' }}" title="{{ next.meta.title }}">{{ resource.meta.l10n.next_article|e }} &rarr;</a></li>
+  {% if next %}
+  <li class="next"><a href="{{ content_url(next.url) }}">{{ next.meta.title|truncate(10, True) }} &rarr;</a></li>
+  {% endif %}
 </ul>
+{%- endmacro %}
 
+
+{% block main -%}
+{{ render_article_pager() }}
 <h2>{{ resource.meta.title|e }}</h2>
 
 <div class="muted text-center">
@@ -19,4 +27,6 @@
 <div id="main_article">
 {% block main_article -%}{%- endblock main_article %}
 </div><!-- /#main_article -->
+
+{{ render_article_pager() }}
 {%- endblock main %}

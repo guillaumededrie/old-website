@@ -38,7 +38,6 @@ urlcleaner:
 sorter:
   time:
     attr: meta.created
-    reverse: true
     filters:
       source_file.kind: html
       is_processable: true

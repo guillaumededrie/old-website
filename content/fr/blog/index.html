@@ -9,7 +9,7 @@ description: Mon Blog en cours de construction.
 <div class="row-fluid">
   <div class="span9">
     <h2>Articles</h2>
-    {% for article in site.content.node_from_relative_path('fr/blog/article/').walk_resources_sorted_by_time() %}
+    {% for article in site.content.node_from_relative_path('fr/blog/article/').walk_resources_sorted_by_time()|reverse() %}
     <article>
       <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small>{{ render_article_infos(article) }}</small></h3>
     </article>
