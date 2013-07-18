@@ -7,7 +7,8 @@
 <div class="row-fluid">
   <div class="span9">
     <ul class="pager">
-      <li class="previous"><a href="{{ content_url(resource.meta.language + "/blog/") }}">&larr; {{ resource.meta.l10n.go_back_to_the_articles|e }}</a></li>
+      <li class="previous"><a href="javascript:history.back();">&larr; {{ resource.meta.l10n.go_back|e }}</a></li>
+      <li><a href="{{ content_url(resource.meta.language + "/blog/") }}">&uarr; {{ resource.meta.l10n.go_back_to_the_articles|e }} &uarr;</a></li>
     </ul>
 
     <h2>{{ resource.meta.l10n.tagged_with|e}} <span data-icon="&#xf02b;"></span> {{ tag.name }}</h2>

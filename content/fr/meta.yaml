@@ -25,6 +25,5 @@ l10n:
   tagged_with: "Article(s) avec le tag"
   source_available: "Sources disponibles sur"
 # pour le blog
-  next_article: "Article suivant"
-  previous_article: "Article précédent"
   go_back_to_the_articles: "Revenir à la liste des articles"
+  go_back: "Précédent"
