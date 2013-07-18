@@ -38,3 +38,4 @@ nosetests.xml
 
 # Hyde specific
 .hyde_deps
+/content/fr/blog/tag
