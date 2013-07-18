@@ -143,3 +143,8 @@ iframe#notfound {
     border: none;
     width: 100%;
 }
+
+/* Article page */
+#main_article {
+    margin-top: 30px;
+}
