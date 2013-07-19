@@ -11,3 +11,9 @@ The source code of this website is released under the [MIT License].
 [hyde]: https://github.com/hyde/hyde
 [http://guillaume.dedrie.fr]: http://guillaume.dedrie.fr
 [MIT License]: http://opensource.org/licenses/mit-license
+
+Todo
+====
+ * English version
+ * Add RSS
+ * Add js search engine
