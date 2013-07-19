@@ -1,0 +1,28 @@
+from fabric.api import *
+from fabric.contrib.project import rsync_project
+
+env.hosts = ['']
+env.user = ''
+
+def clean():
+    local('rm -rf ./deploy')
+    local('rm -rf ./content/fr/blog/tags/')
+
+def generate():
+    local('hyde gen')
+
+def regen():
+    clean()
+    generate()
+
+def serve(port="8080"):
+    regen()
+    local('hyde serve -p %s' % port)
+
+def deploy():
+    regen()
+    rsync_project(
+        remote_dir = "",
+        local_dir = "deploy/",
+        delete = True
+    )

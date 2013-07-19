@@ -1,0 +1,41 @@
+# See automatic redirection.
+map $http_accept_language $lang {
+    default en;
+{% for code, lang in languages %}
+    ~{{code}} {{code}};
+{% endfor %}
+}
+
+server {
+        listen 80;
+        server_name ; # your server
+        server_name_in_redirect off;
+
+        root ; # put the path to your root directory
+        index index.html;
+	error_page 404 {{content_url('/en/404.html')}};
+
+        add_header "X-UA-Compatible" "IE=Edge,chrome=1";
+
+	# Hide file.
+        location = /nginx.conf {
+                expires max;
+                return 404;
+        }
+
+	# For language automatic redirection. See the top of this file for "lang" var.
+        location = / {
+                add_header Vary Accept-Language;
+                rewrite ^ /$lang/ permanent;
+        }
+
+{% for code, lang in languages	%}
+
+        # Multilingual site : {{ lang }}.
+	location /{{code}} {
+                error_page 404 {{ content_url('/' + code + '/404.html') }};
+                try_files $uri $uri.html $uri/index.html =404;
+	}
+{% endfor %}
+
+}
