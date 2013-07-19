@@ -1,7 +1,7 @@
 {% extends "base.j2" %}
 {% from "macros.j2" import render_article_infos, render_tag with context %}
 
-{% block title %}Tag {{ tag.name }}{% endblock title %}
+{% block title %}Tag {{ tag.name|replace('_', ' ') }}{% endblock title %}
 
 {% block main -%}
 <div class="row-fluid">
