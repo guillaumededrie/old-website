@@ -23,15 +23,14 @@ git clone https://github.com/guillaumededrie/guillaume.dedrie.fr.git
  5. Copy and customize the nginx.conf.py to content/nginx.conf
  6. Launch your hyde environment
 
-Running
--------
+Run the website (local)
+-----------------------
 In your hyde environment
  1. Use `fab serve` and launch your browser to the `localhost:8080` url
  2. You can use hyde built in command such as :
-```
-hyde gen - generate the website
-hyde serve - serve the website to the localhost:8080 url
-```
+    * `hyde gen - generate the website`
+    * `hyde serve - serve the website to the localhost:8080 url`
+
 
 Deploy
 ------
