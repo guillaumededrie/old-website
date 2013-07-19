@@ -16,9 +16,8 @@ Setup
  2. Create a virtualenv and install Fabric and Hyde
  3. Clone this repository
  
-```
-git clone https://github.com/guillaumededrie/guillaume.dedrie.fr.git
-```
+	git clone https://github.com/guillaumededrie/guillaume.dedrie.fr.git
+
  4. Copy and customize the fabfile.py.dist to fabfile.py (at the root of the project)
  5. Copy and customize the nginx.conf.py to content/nginx.conf
  6. Launch your hyde environment
