@@ -2,15 +2,15 @@
 extends: base.j2
 default_block: main
 title: Blog
-description: Mon Blog en cours de construction.
+description: My personnal blog. Posts listing.
 uuid: blog
 ---
 {% from "macros.j2" import render_article_infos, render_tag with context %}
 
 <div class="row-fluid">
   <div class="span9">
-    <h2>Articles</h2>
-    {% for article in site.content.node_from_relative_path('fr/blog/article/').walk_resources_sorted_by_time()|reverse() %}
+    <h2>Posts</h2>
+    {% for article in site.content.node_from_relative_path('en/blog/post/').walk_resources_sorted_by_time()|reverse() %}
     <article>
       <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small>{{ render_article_infos(article) }}</small></h3>
     </article>
@@ -18,6 +18,6 @@ uuid: blog
   </div><!-- /.span9 -->
   <div class="span3">
     <h2><span data-icon="&#xf02c;"></span> Tags</h2>
-    {% for tag, meta in site.tagger.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %}
+{#    {% for tag, meta in site.tagger.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %} #}
   </div><!-- /.span3 -->  
 </div><!-- /.row-fluid -->
