@@ -47,7 +47,13 @@ tagger:
   sorter: time
   archives:
     frblog:
-      source: fr/blog/post
+      source: fr/blog/
       target: fr/blog/tag
       template: blog_tag.j2
       archive_extension: html
+    enblog:
+      source: en/blog/
+      target: en/blog/tag
+      template: blog_tag.j2
+      archive_extension: html
+

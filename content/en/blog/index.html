@@ -18,6 +18,6 @@ uuid: blog
   </div><!-- /.span9 -->
   <div class="span3">
     <h2><span data-icon="&#xf02c;"></span> Tags</h2>
-{#    {% for tag, meta in site.tagger.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %} #}
+    {% for tag, meta in site.tagger.enblog.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %}
   </div><!-- /.span3 -->  
 </div><!-- /.row-fluid -->
