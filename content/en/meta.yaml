@@ -9,6 +9,9 @@ menu:
   -
      name: "My résumé"
      page: "my-resume.html"
+  -
+     name: "Projects"
+     page: "projects.html"
 
 l10n:
   read_more: "read more"

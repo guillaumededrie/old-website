@@ -39,5 +39,6 @@ nosetests.xml
 # Hyde specific
 .hyde_deps
 content/fr/blog/tag
+content/en/blog/tag
 fabfile.py
 content/nginx.conf
