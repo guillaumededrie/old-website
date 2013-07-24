@@ -38,9 +38,9 @@ Using fabric, and the fabfile you customized, just launch `fab deploy`.
 
 Todo
 ====
- - [ ] English version
- - [ ] Add RSS
- - [ ] Add js search engine
+ - English version (Running)
+ - Add RSS
+ - Add js search engine
 
 
 
