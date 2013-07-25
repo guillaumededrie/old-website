@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
 #<site_root>/functions.py
 
 from hyde.plugin import Plugin
 
+
+# try to change to : resource.prev_by... instead of prev_by...(resource)
 def prev_by_time_and_language(resource):
     temp = resource
     while temp.prev_by_time:

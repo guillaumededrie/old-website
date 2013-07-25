@@ -5,7 +5,7 @@ title: Blog
 description: Mon Blog traitant de sujets technologiques (programmation, developpement, 
 uuid: blog
 ---
-{% from "macros.j2" import render_article_infos, render_tag with context %}
+{% from "macros.j2" import render_article_infos, render_tag, render_blog_sidebar with context %}
 
 <div class="row-fluid">
   <div class="span9">
@@ -17,7 +17,6 @@ uuid: blog
     {% endfor %}
   </div><!-- /.span9 -->
   <div class="span3">
-    <h2><span data-icon="&#xf02c;"></span> Tags</h2>
-    {% for tag, meta in site.tagger.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %}
+    {{ render_blog_sidebar() }}
   </div><!-- /.span3 -->  
 </div><!-- /.row-fluid -->

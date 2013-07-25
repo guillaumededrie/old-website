@@ -2,6 +2,13 @@
 <a class="tag label label-info" href="{{ content_url(resource.meta.language + "/blog/tag/" + tagname + ".html") }}">{{ resource.meta.i18n[tagname] }} {% if number_articles %}({{ number_articles }}){% endif %}</a>
 {%- endmacro %}
 
+
 {% macro render_article_infos(article) -%}
 <span data-icon="&#xf073;"></span> {{ article.meta.created.strftime('%Y-%m-%d') }} | <span data-icon="&#xf02c;"></span> Tags : {% for tag in article.meta.tags %}{{ render_tag(tag) }} {% endfor %} | <span data-icon="&#xe000;"></span> <a href="http://guillaume.dedrie.fr">Guillaume Dedrie</a>
+{%- endmacro %}
+
+
+{% macro render_blog_sidebar() -%}
+<h2><span data-icon="&#xf02c;"></span> Tags</h2>
+{% for tag, meta in site.tagger.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %}
 {%- endmacro %}

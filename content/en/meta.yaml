@@ -22,6 +22,7 @@ i18n:
   powered_using: "Powered using"
   source_available: "Sources vailable on"
   # blog tags
+  tagged_with: "Post(s) tagged with"
   go_back_to_the_articles: "Back to the articles"
   go_back: "Go back"
   news: "News"
