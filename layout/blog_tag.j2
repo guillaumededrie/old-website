@@ -1,18 +1,18 @@
 {% extends "base.j2" %}
 {% from "macros.j2" import render_article_infos, render_tag with context %}
 
-{% block title %}Tag {{ tag.name|replace('_', ' ') }}{% endblock title %}
+{% block title %}Tag {{ resource.meta.i18n[tag.name] }}{% endblock title %}
 
 {% block main -%}
 <div class="row-fluid">
   <div class="span9">
     <ul class="pager">
-      <li class="previous"><a href="javascript:history.back();">&larr; {{ resource.meta.l10n.go_back|e }}</a></li>
-      <li><a href="{{ content_url(resource.meta.language + "/blog/") }}">&uarr; {{ resource.meta.l10n.go_back_to_the_articles|e }} &uarr;</a></li>
+      <li class="previous"><a href="javascript:history.back();">&larr; {{ resource.meta.i18n.go_back|e }}</a></li>
+      <li><a href="{{ content_url(resource.meta.language + "/blog/") }}">&uarr; {{ resource.meta.i18n.go_back_to_the_articles|e }} &uarr;</a></li>
     </ul>
 
-    <h2>{{ resource.meta.l10n.tagged_with|e}} {{ render_tag(tag.name) }}</h2>
-    {% for article in site.content.walk_resources_tagged_with(tag)|reverse() -%}
+    <h2>{{ resource.meta.i18n.tagged_with|e}} {{ render_tag(tag.name) }}</h2>
+    {% for article in site.content.walk_resources_tagged_with(tag.name)|reverse() -%}
     <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small>{{ render_article_infos(article) }}</small></h3>
     {%- endfor %}
   </div><!-- /.span9 -->

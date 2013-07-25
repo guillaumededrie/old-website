@@ -15,7 +15,8 @@ menu:
   -
      name: "À propos"
      page: "a-propos.html"
-l10n:
+
+i18n:
   read_more: "lire plus"
   search: "Rechercher"
   follow_me: "Me suivre"
@@ -27,3 +28,4 @@ l10n:
 # pour le blog
   go_back_to_the_articles: "Revenir à la liste des articles"
   go_back: "Précédent"
+  news: "Actualité"

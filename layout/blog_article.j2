@@ -1,16 +1,18 @@
 {% extends "base.j2" %}
-{% from "macros.j2" import render_article_infos with context %}   
-{% set prev = resource.prev_by_time %}
-{% set next = resource.next_by_time %}
+{% from "macros.j2" import render_article_infos with context %}
+
+
+{% set prev = prev_by_time_and_language(resource) %}
+{% set next = next_by_time_and_language(resource) %}
 
 {% macro render_article_pager() -%}
 <ul class="pager">
   {% if prev %}
-  <li class="previous"><a href="{{ content_url(prev.url) }}">&larr; {{ prev.meta.title|truncate(10, True) }}</a></li>
+  <li class="previous"><a href="{{ content_url(prev.url) }}">&larr; {{ prev.meta.title|truncate(20, True) }}</a></li>
   {% endif %}
-  <li><a href="{{ content_url(resource.meta.language + '/blog/') }}">&uarr; {{ resource.meta.l10n.go_back_to_the_articles|e }} &uarr;</a></li>
+  <li><a href="{{ content_url(resource.meta.language + '/blog/') }}">&uarr; {{ resource.meta.i18n.go_back_to_the_articles|e }} &uarr;</a></li>
   {% if next %}
-  <li class="next"><a href="{{ content_url(next.url) }}">{{ next.meta.title|truncate(10, True) }} &rarr;</a></li>
+  <li class="next"><a href="{{ content_url(next.url) }}">{{ next.meta.title|truncate(20, True) }} &rarr;</a></li>
   {% endif %}
 </ul>
 {%- endmacro %}

@@ -1,5 +1,5 @@
 {% macro render_tag(tagname, number_articles = '') -%}
-<a class="tag label label-info" href="{{ content_url(resource.meta.language + "/blog/tag/" + tagname + ".html") }}">{{ tagname|replace('_', ' ') }} {% if number_articles %}({{ number_articles }}){% endif %}</a>
+<a class="tag label label-info" href="{{ content_url(resource.meta.language + "/blog/tag/" + tagname + ".html") }}">{{ resource.meta.i18n[tagname] }} {% if number_articles %}({{ number_articles }}){% endif %}</a>
 {%- endmacro %}
 
 {% macro render_article_infos(article) -%}
