@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for res in site.content.walk_resources() if res.source.kind == "html" -%}
+  <url>
+    <loc>{{ base }}{{ content_url(res.url) }}</loc>
+    {% if res.meta.modified -%}<lastmod>{{ res.meta.modified.strftime('%Y-%m-%d') }}</lastmod>{%- elif res.meta.created -%}<lastmod>{{ res.meta.created.strftime('%Y-%m-%d') }}</lastmod>{% endif %}
+    <changefreq>{% if res.url.endswith("index.html") %}daily{% else %}weekly{% endif %}</changefreq>
+    <priority>{%- if res.url.endswith("index.html") %}0.9
+      {%- else %}0.5{% endif %}</priority>
+  </url>
+  {%- endfor %}
+</urlset>
