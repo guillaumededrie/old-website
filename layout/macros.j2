@@ -10,5 +10,14 @@
 
 {% macro render_blog_sidebar() -%}
 <h2><span data-icon="&#xf02c;"></span> Tags</h2>
-{% for tag, meta in site.tagger.tags -%}{{ render_tag(tag, (meta.resources|length)) }} {% endfor %}
+{% for tag, tagposts in site.tagger.tags -%}
+   {% set resources = [] %}
+   {% for res in tagposts.resources %}
+     {% do resources.append(res) if res.meta.language == resource.meta.language %}
+   {% endfor %}
+
+   {% if resources|length > 0 %}
+     {{ render_tag(tag, (resources|length)) }}
+   {% endif %}
+{% endfor %}
 {%- endmacro %}
