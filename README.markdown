@@ -33,13 +33,13 @@ In your hyde environment
 
 Deploy
 ------
-Using fabric, and the fabfile you customized, just launch `fab deploy`.
+Using fabric (with the fabfile.py.dist you customized), just launch `fab deploy`.
 
 
 Todo
 ====
  - English version (Running)
- - Add RSS
+ - Add RSS (Runnig)
  - Add js search engine
 
 
