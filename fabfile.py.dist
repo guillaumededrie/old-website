@@ -6,7 +6,8 @@ env.user = ''
 
 def clean():
     local('rm -rf ./deploy')
-    local('rm -rf ./content/fr/blog/tags/')
+    local('rm -rf ./content/fr/blog/tag/')
+    local('rm -rf ./content/en/blog/tag/')
 
 def generate():
     local('hyde gen')
