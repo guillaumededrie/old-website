@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ resource.meta.language }}">
+    <title>
+        {{ resource.meta.title|e }} | {{ resource.meta.author|e }}
+    </title>
+    <link href="{{base}}{{ content_url(resource.url) }}" rel="self" />
+    <link href="{{base}}{{ content_url(resource.meta.language) }}"/>
+    <id>{{ base }}{{ content_url(resource.url) }}/</id>
+
+    {% for res in resource.node.walk_resources_sorted_by_time()|reverse() -%}
+    {%- if loop.first -%}
+    <updated>{{ time_now|xmldatetime }}</updated>
+    {% endif %}
+
+    <entry>
+      <title type="html">{{ res.meta.title|e }}</title>
+      <author><name>Guillaume Dedrie</name></author>
+      <link href="{{base}}{{ content_url(res.url) }}"/>
+      <updated>{{ res.meta.created|xmldatetime }}</updated>
+      <published>{{ res.meta.created|xmldatetime }}</published>
+      <id>{{ content_url(res.url) }}</id>
+
+      <content type="html">
+<![CDATA[
+{% refer to res.relative_path as file -%}
+{{ file.article|markdown|typogrify }}
+]]>
+      </content>
+    </entry>
+    {% endfor -%}
+</feed>
