@@ -2,7 +2,7 @@
 extends: base.j2
 default_block: main
 title: Blog
-description: Mon Blog traitant de sujets technologiques (programmation, developpement, 
+description: Mon Blog traitant de sujets technologiques (programmation, developpement) mais aussi de mes passions.
 uuid: blog
 ---
 {% from "macros.j2" import render_article_infos, render_tag, render_blog_sidebar with context %}
@@ -10,7 +10,7 @@ uuid: blog
 <div class="row-fluid">
   <div class="span9">
     <h2>Articles</h2>
-    {% for article in site.content.node_from_relative_path('fr/blog/article/').walk_resources_sorted_by_time()|reverse() %}
+    {% for article in resource.node.walk_resources_sorted_by_time()|reverse() %}
     <article>
       <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small>{{ render_article_infos(article) }}</small></h3>
     </article>
