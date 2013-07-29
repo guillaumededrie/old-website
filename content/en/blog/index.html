@@ -9,8 +9,8 @@ uuid: blog
 
 <div class="row-fluid">
   <div class="span9">
-    <h2>Posts</h2>
-    {% for article in site.content.node_from_relative_path('en/blog/post/').walk_resources_sorted_by_time()|reverse() %}
+    <h2>Posts <small>| <a href="{{ content_url(resource.meta.language + '/blog/atom.xml')}}"><span data-icon="&#xe009;"></span> Articles feed</a></small></h2>
+    {% for article in resource.node.walk_resources_sorted_by_time()|reverse() %}
     <article>
       <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small>{{ render_article_infos(article) }}</small></h3>
     </article>

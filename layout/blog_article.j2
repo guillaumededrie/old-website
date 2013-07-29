@@ -27,7 +27,9 @@
 </div>
 
 <div id="main_article">
+{% mark article -%}
 {% block main_article -%}{%- endblock main_article %}
+{% endmark %}
 </div><!-- /#main_article -->
 
 {{ render_article_pager() }}

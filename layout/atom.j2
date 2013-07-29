@@ -21,10 +21,10 @@
       <id>{{ content_url(res.url) }}</id>
 
       <content type="html">
-<![CDATA[
-{% refer to res.relative_path as file -%}
-{{ file.article|markdown }}
-]]>
+	{% refer to res.relative_deploy_path as post %}
+	{% filter forceescape -%}
+	{{ post.article }}
+	{% endfilter %}
       </content>
     </entry>
     {% endfor -%}

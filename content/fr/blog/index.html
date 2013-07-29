@@ -9,7 +9,7 @@ uuid: blog
 
 <div class="row-fluid">
   <div class="span9">
-    <h2>Articles</h2>
+    <h2>Articles <small>| <a href="{{ content_url(resource.meta.language + '/blog/atom.xml')}}"><span data-icon="&#xe009;"></span> Flux des articles</a></small></h2>
     {% for article in resource.node.walk_resources_sorted_by_time()|reverse() %}
     <article>
       <h3><a href="{{ content_url(article.url) }}">{{ article.meta.title }}</a> <small>{{ render_article_infos(article) }}</small></h3>
