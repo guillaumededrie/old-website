@@ -28,6 +28,7 @@ footer {
 }
 
 #main-wrapper {
+    padding-top: 20px;
     font-size: 1.4em;
     line-height: 1.6em;
 }
