@@ -12,6 +12,9 @@ menu:
   -
      name: "Projects"
      page: "projects.html"
+  -
+     name: "About"
+     page: "about.html"
 
 i18n:
   read_more: "read more"
