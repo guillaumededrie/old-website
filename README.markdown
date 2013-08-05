@@ -38,8 +38,8 @@ Using fabric (with the fabfile.py.dist you customized), just launch `fab deploy`
 
 Todo
 ====
- - English version (Running)
- - Add js search engine
+ - Add js search engine	
+ - Add CV
 
 
 

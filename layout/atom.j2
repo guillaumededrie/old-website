@@ -14,7 +14,9 @@
 
     <entry>
       <title type="html">{{ res.meta.title|e }}</title>
-      <author><name>Guillaume Dedrie</name></author>
+      <author>
+        <name>Guillaume Dedrie</name>
+      </author>
       <link href="{{base}}{{ content_url(res.url) }}"/>
       <updated>{{ res.meta.created|xmldatetime }}</updated>
       <published>{{ res.meta.created|xmldatetime }}</published>
@@ -26,6 +28,10 @@
 	{{ post.article }}
 	{% endfilter %}
       </content>
+
+      {% for tag in res.meta.tags %}
+      <category scheme="{{base}}{{ content_url(resource.meta.language + '/blog/tag') }}" term="{{ tag }}" label="{{ resource.meta.i18n[tag]|title }}" />
+      {% endfor -%}
     </entry>
     {% endfor -%}
 </feed>
