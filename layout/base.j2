@@ -9,6 +9,10 @@
         <meta name="description" content="{{ resource.meta.description }}">
         <meta name="viewport" content="width=device-width">
 
+	{% if resource.meta.language -%}
+	<link rel="alternate" type="application/atom+xml" title="Atom (Feed)" href="{{ content_url(resource.meta.language + '/blog/atom.xml')}}" />
+	{% endif %}
+
 	{% block css -%}
 	<link rel="stylesheet" href="{{ media_url('css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ media_url('css/bootstrap-responsive.min.css') }}">

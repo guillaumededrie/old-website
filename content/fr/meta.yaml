@@ -28,4 +28,5 @@ i18n:
   tagged_with: "Article(s) avec le tag"
   go_back_to_the_articles: "Revenir à la liste des articles"
   go_back: "Précédent"
-  news: "Actualité"
+# les tags
+  news: "Actualités"
