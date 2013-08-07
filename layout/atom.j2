@@ -16,6 +16,7 @@
       <title type="html">{{ res.meta.title|e }}</title>
       <author>
         <name>Guillaume Dedrie</name>
+	<email>guillaume@dedrie.fr</email>
       </author>
       <link href="{{base}}{{ content_url(res.url) }}"/>
       <updated>{{ res.meta.created|xmldatetime }}</updated>
@@ -24,9 +25,9 @@
 
       <content type="html">
 	{% refer to res.relative_deploy_path as post %}
-	{% filter forceescape -%}
+	<![CDATA[
 	{{ post.article }}
-	{% endfilter %}
+	]]>
       </content>
 
       {% for tag in res.meta.tags %}
